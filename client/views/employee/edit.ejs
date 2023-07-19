@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/employees/<%=employee._id  %>?_method=PATCH" method="POST">
+        <label for="firstName">Firstname: </label>
+        <input type="text" name="employee[firstName]" id="firstName"  value="<%= employee.firstName%>">
+
+        <br>
+
+        <label for="lastName">LastName: </label>
+        <input type="text" name="employee[lastName]" id="lastName" value="<%= employee.lastName%>">
+
+        <br>
+        
+        <label for="age">Age: </label>
+        <input type="number" name="employee[age]" id="employee[age]" value="<%= employee.age%>">
+
+        <br>
+        
+        <label for="address">Address: </label>
+        <input type="text" name="employee[address]" id="address" value="<%= employee.address%>">
+
+        <br>
+        
+        <label for="email">Email: </label>
+        <input type="email" name="employee[email]" id="email" value="<%= employee.email%>">
+        <br>
+        
+
+         
+        <label for="office">office: </label>
+        <select name="employee[office]" id="office">
+            <option value="">-</option>
+            <option value="hrOffice">HR Office</option>
+            <option value="mayorsOffice">Mayor's Office</option>
+            <option value="mpdo">MPDO</option>
+            <option value="cbms">CBMS</option>
+        </select>
+        <br>
+        
+        <label for="position">position: </label>
+        <select name="employee[position]" id="position">
+            <option value="">-</option>
+            <option value="jobOrder">Job Order</option>
+            <option value="casual">Casual</option>
+            <option value="regular">Regular</option>
+        </select>
+        <br>
+        
+        <label for="sssId">SSS ID: </label>
+        <input type="text" name="employee[sssId]" id="sssId" value="<%= employee.sssId%>">
+        <br>
+        
+        <label for="gsisId">GSIS ID: </label>
+        <input type="text" name="employee[gsisId]" id="gsisId" value="<%= employee.gsisId%>">
+        <br>
+        
+        <label for="philHealthId">Phil Health ID: </label>
+        <input type="text" name="employee[philHealthId]" id="philHealthId" value="<%= employee.philHealthId%>">
+
+        <br>
+        
+        <label for="pagibigId">Pag-ibig ID: </label>
+        <input type="text" name="employee[pagibigId]" id="pagibigId" value="<%= employee.pagibigId%>">
+
+        <br>
+
+        <label for="tinId">TIN ID: </label>
+        <input type="text" name="employee[tinId]" id="tinId" value="<%= employee.tinId%>">
+
+        <br>
+        
+        <label for="designation">Designation: </label>
+        <select name="employee[designation]" id="designation">
+            <option value="">-</option>
+            <option value="officeAid">Office Aid</option>
+            <option value="laborer">Laborer</option>
+        </select>
+        
+    <button>Submit</button>
+    </form>
+    
+</body>
+</html>
