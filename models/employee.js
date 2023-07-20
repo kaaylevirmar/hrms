@@ -6,9 +6,18 @@ const Schema = mongoose.Schema;
 const employeesSchema = new Schema({
 
     firstName: String,
-    lastName: String,
+    lastName: String,   
     age: Number,
-    address: String,
+    street: String,
+    barangay: String,
+    city: String,
+    province: String,
+    postalCode: Number, 
+    phoneNumber: Number,
+    phoneNumber2: Number,
+    emergContactPer: String,
+    contactNumber: Number,
+    employeeId: String,
     email: String,
     office: String,
     position: String,
@@ -18,7 +27,8 @@ const employeesSchema = new Schema({
     pagibigId: String,
     tinId: String,
     designation: String,
-    joiningDate: {
+    dateStart: String,
+    createdAt: {
         type: Date,
         default: Date.now(),
     }

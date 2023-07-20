@@ -1,0 +1,167 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="my-3">
+    <h2 class="text-success">Employee Information</h2>
+</div>
+
+<div class="m-3 card col-md-8 shadow">
+    <a href="/employees/<%=employee._id%>/update-employee-form">Edit</a>
+    <div class="d-flex">
+        <div class="d-flex align-items-center m-3">
+            <img src="/pic.jpg" alt="test" 
+            class="img-fluid rounded-circle bg-light shadow"
+            style="height:100px;width:100px;">
+        </div>
+    <div class="d-flex align-items-center">
+        <div>
+            <div class="card-text my-2">
+                
+                <span class="ms-3 fs-5 text-success"><%=employee.firstName%> <%=employee.lastName%> </span>
+                <span> - <%=employee.position  %></span>
+            </div>
+            <div class="card-text my-2">
+                <span class="ms-3"><%=employee.office  %></span>
+            </div>
+            <div class="card-text my-2">
+                <span class="ms-3"><%=employee.designation  %></span>
+            </div>
+            
+        </div>
+
+       
+    </div>
+ </div>
+    <div class="border-top">
+        <div class="d-flex" style="font-size: 0.9em;">
+            <div class="card-body pt-1 ps-1  pe-0 col-3 me-0"> 
+              
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Street:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Barangay:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">City:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Province:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Zip / Postal Code:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Phone Number:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Phone Number 2:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Email Address:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Emergency Contact:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Contact Number:</span>
+                </div>
+            </div>
+            <div class="card-body pt-1 pe-1 ps-0 col-3 ms-0">
+                
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.street  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.barangay %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.city  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.province  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.postalCode  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.phoneNumber  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.phoneNumber2  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.email  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.emergContactPer  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.contactNumber  %></span>
+                </div>
+            </div>
+
+            <div class="card-body pt-1 ps-1 pe-0 col-3 me-0">
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Employee ID:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Department:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Role Title:</span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="text-success ms-3">Employment Start:</span>
+                </div>
+                <div class="border border-end-0 rounded-start me-0">
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3">SSS ID:</span>
+                    </div>
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3">GSIS ID:</span>
+                    </div>
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3">PhilHealth ID:</span>
+                    </div>
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3">PagIbig ID:</span>
+                    </div>
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3">TIN:</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body pt-1 pe-1 ps-0 col-3 ms-0">
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.employeeId  %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.office%></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.designation %></span>
+                </div>
+                <div class="card-text my-2">
+                    <span class="ms-3"><%=employee.dateStart %></span>
+                </div>
+                <div class="border border-start-0 rounded-end ms-0">
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3"><%=employee.sssId  %></span>
+                    </div>
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3"><%=employee.gsisId  %></span>
+                    </div>
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3"><%=employee.philHealthId  %></span>
+                    </div>
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3"><%=employee.pagibigId  %></span>
+                    </div>
+                    <div class="card-text my-2">
+                        <span class="text-success ms-3"><%=employee.tinId  %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

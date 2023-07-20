@@ -19,12 +19,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/hrms')
 
 exports.viewEmployees = async (req,res) => {
     const employees = await Employee.find({})
-    res.render('employee/show',{employees});
+   
+    res.render('pages/employees',{employees});
 }
 
 
 exports.employeesForm = (req,res)=>{
-    res.render('employee/employeeForm',{offices,positions,designations});
+    res.render('pages/employeeForm',{offices,positions,designations});
 }
 
 exports.addEmployee = async (req,res)=>{
@@ -36,14 +37,16 @@ exports.addEmployee = async (req,res)=>{
 
 exports.viewEmployee= async (req,res)=>{
     const id = req.params.id;
-    const employee = await Employee.findById(id)
-    res.render('employee/viewEmployee',{employee})
+    
+    const employee = await Employee.findById(id);
+    
+    res.render('pages/emp-info',{employee})
 }
 
 exports.updateEmployeeForm = async (req,res)=>{
     const id = req.params.id;
     const employee = await Employee.findById(id);
-    res.render('employee/edit',{employee,offices,positions,designations});
+    res.render('pages/edit',{employee,offices,positions,designations});
 }
 
 exports.updateEmployee = async(req,res) => {
@@ -55,6 +58,5 @@ exports.updateEmployee = async(req,res) => {
 exports.deleteEmployee = async (req,res) => {
     const id = req.params.id;
     await Employee.findByIdAndDelete(id);
-    
-    res.redirect('/employees')
+     res.redirect('/employees')
 }

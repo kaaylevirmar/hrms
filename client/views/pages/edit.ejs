@@ -22,8 +22,46 @@
 
         <br>
         
-        <label for="address">Address: </label>
-        <input type="text" name="employee[address]" id="address" value="<%= employee.address%>">
+        <label for="street">St. Address: </label>
+        <input type="text" name="employee[street]" id="street" value="<%=employee.street %>">
+        <br>
+        
+        <label for="barangay">Barangay: </label>
+        <input type="text" name="employee[barangay]" id="barangay" value="<%=employee.barangay  %>">
+        
+        <br>
+        
+        <label for="city">City: </label>
+        <input type="text" name="employee[city]" id="city" value="<%=employee.city  %>">
+        <br>
+        
+        <label for="province">Province: </label>
+        <input type="text" name="employee[province]" id="province" value="<%=employee.province  %>">
+        <br>
+        
+        <label for="postalCode">Zip/Postal Coded: </label>
+        <input type="number" name="employee[postalCode]" id="postalCode" value="<%=employee.postalCode  %>">
+        <br>
+        
+        <label for="phoneNumber">Phone Number: </label>
+        <input type="number" name="employee[phoneNumber]" id="phoneNumber" value="<%=employee.phoneNumber  %>">
+        <br>
+        
+        <label for="phoneNumber2">Phone Number 2: </label>
+        <input type="number" name="employee[phoneNumber2]" id="phoneNumber2" value="<%=employee.phoneNumber2  %>">
+        <br>
+        
+        <label for="emergContactPer">Emergency Contact Person: </label>
+        <input type="text" name="employee[emergContactPer]" id="emergContactPer" value="<%=employee.emergContactPer  %>">
+        <br>
+        
+        <label for="contactNumber">Contact Number: </label>
+        <input type="number" name="employee[contactNumber]" id="contactNumber" value="<%=employee.contactNumber  %>">
+
+        <br>
+        
+        <label for="employeeId">Employee ID: </label>
+        <input type="text" name="employee[employeeId]" id="employeeId" value="<%=employee.employeeId  %>">
 
         <br>
         
@@ -78,6 +116,10 @@
                 <option value="<%=designation  %>" <%=employee.designation === designation? 'selected':''  %>><%=designation %></option>
             <% } %>
         </select>
+
+        <br>
+        <label for="dateStart"></label>
+        <input type="date" name="employee[dateStart]" id="dateStart" value="<%=employee.dateStart %>">
         
     <button>Submit</button>
     </form>

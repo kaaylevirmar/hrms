@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/employees" method="POST">
+        <label for="firstName">Firstname: </label>
+        <input type="text" name="employee[firstName]" id="firstName">
+
+        <br>
+
+        <label for="lastName">LastName: </label>
+        <input type="text" name="employee[lastName]" id="lastName">
+
+        <br>
+        
+        <label for="age">Age: </label>
+        <input type="number" name="employee[age]" id="employee[age]">
+
+        <br>
+        
+        <label for="street">St. Address: </label>
+        <input type="text" name="employee[street]" id="street">
+        <br>
+        
+        <label for="barangay">Barangay: </label>
+        <input type="text" name="employee[barangay]" id="barangay">
+        
+        <br>
+        
+        <label for="city">City: </label>
+        <input type="text" name="employee[city]" id="city">
+        <br>
+        
+        <label for="province">Province: </label>
+        <input type="text" name="employee[province]" id="province">
+        <br>
+        
+        <label for="postalCode">Zip/Postal Coded: </label>
+        <input type="number" name="employee[postalCode]" id="postalCode">
+        <br>
+        
+        <label for="phoneNumber">Phone Number: </label>
+        <input type="number" name="employee[phoneNumber]" id="phoneNumber">
+        <br>
+        
+        <label for="phoneNumber2">Phone Number 2: </label>
+        <input type="number" name="employee[phoneNumber2]" id="phoneNumber2">
+        <br>
+        
+        <label for="emergContactPer">Emergency Contact Person: </label>
+        <input type="text" name="employee[emergContactPer]" id="emergContactPer">
+        <br>
+        
+        <label for="contactNumber">Contact Number: </label>
+        <input type="number" name="employee[contactNumber]" id="contactNumber">
+
+        <br>
+        
+        <label for="employeeId">Employee ID: </label>
+        <input type="text" name="employee[employeeId]" id="employeeId">
+        
+        <br>
+        
+        <label for="email">Email: </label>
+        <input type="email" name="employee[email]" id="email">
+       
+        <br>
+        
+        <label for="sssId">SSS ID: </label>
+        <input type="text" name="employee[sssId]" id="sssId">
+        <br>
+        
+        <label for="gsisId">GSIS ID: </label>
+        <input type="text" name="employee[gsisId]" id="gsisId">
+        <br>
+        
+        <label for="philHealthId">Phil Health ID: </label>
+        <input type="text" name="employee[philHealthId]" id="philHealthId">
+
+        <br>
+        
+        <label for="pagibigId">Pag-ibig ID: </label>
+        <input type="text" name="employee[pagibigId]" id="pagibigId">
+
+        <br>
+
+        <label for="tinId">TIN ID: </label>
+        <input type="text" name="employee[tinId]" id="tinId">
+        <br>
+        
+
+         
+        <label for="office">office: </label>
+        <select name="employee[office]" id="office">
+            <option value="" selected >-Select Office</option>
+            <% for (let office of offices) { %>
+                <option value="<%=office.office%> "><%=office.office  %></option>
+            <% } %>
+            
+        </select>
+        <br>
+        
+        <label for="position">position: </label>
+        <select name="employee[position]" id="position">
+            <option value="">-Select Position</option>
+            <% for (let position of positions) { %>
+                <option value="<%=position %>"><%=position %></option>
+            <% } %>
+        </select>
+        <br>
+        
+        <label for="designation">Designation: </label>
+        <select name="employee[designation]" id="designation">
+            <option value="" selected>-Select Designation</option>
+            <% for (let designation of designations) { %>
+                <option value="<%=designation  %>"><%=designation  %></option>
+            <% } %>
+        </select>
+        
+        <br>
+        <label for="dateStart"></label>
+        <input type="date" name="employee[dateStart]" id="dateStart">
+        
+    <button>Submit</button>
+    </form>
+    
+    <a href="/employees">Back</a>
+</body>
+</html>
