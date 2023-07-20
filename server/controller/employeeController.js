@@ -1,6 +1,11 @@
 const mongoose =require('mongoose');
-
+const offices = require('../../seeds/offices');
+const positions = require('../../seeds/position');
+const designations = require('../../seeds/designation');
 const Employee = require('../../models/employee');
+
+
+
 
 mongoose.connect('mongodb://127.0.0.1:27017/hrms')
 .then(()=>{
@@ -10,13 +15,16 @@ mongoose.connect('mongodb://127.0.0.1:27017/hrms')
     console.log(`Error: ${err}`);
 })
 
+
+
 exports.viewEmployees = async (req,res) => {
     const employees = await Employee.find({})
     res.render('employee/show',{employees});
 }
 
+
 exports.employeesForm = (req,res)=>{
-    res.render('employee/employeeForm');
+    res.render('employee/employeeForm',{offices,positions,designations});
 }
 
 exports.addEmployee = async (req,res)=>{
@@ -35,7 +43,7 @@ exports.viewEmployee= async (req,res)=>{
 exports.updateEmployeeForm = async (req,res)=>{
     const id = req.params.id;
     const employee = await Employee.findById(id);
-    res.render('employee/edit',{employee});
+    res.render('employee/edit',{employee,offices,positions,designations});
 }
 
 exports.updateEmployee = async(req,res) => {

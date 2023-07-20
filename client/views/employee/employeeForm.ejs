@@ -35,20 +35,20 @@
          
         <label for="office">office: </label>
         <select name="employee[office]" id="office">
-            <option value="">-</option>
-            <option value="hrOffice">HR Office</option>
-            <option value="mayorsOffice">Mayor's Office</option>
-            <option value="mpdo">MPDO</option>
-            <option value="cbms">CBMS</option>
+            <option value="" selected >-Select Office</option>
+            <% for (let office of offices) { %>
+                <option value="<%=office.office  %>"><%=office.office  %></option>
+            <% } %>
+            
         </select>
         <br>
         
         <label for="position">position: </label>
         <select name="employee[position]" id="position">
-            <option value="">-</option>
-            <option value="jobOrder">Job Order</option>
-            <option value="casual">Casual</option>
-            <option value="regular">Regular</option>
+            <option value="">-Select Position</option>
+            <% for (let position of positions) { %>
+                <option value="<%=position %>"><%=position %></option>
+            <% } %>
         </select>
         <br>
         
@@ -77,13 +77,15 @@
         
         <label for="designation">Designation: </label>
         <select name="employee[designation]" id="designation">
-            <option value="">-</option>
-            <option value="officeAid">Office Aid</option>
-            <option value="laborer">Laborer</option>
+            <option value="" selected>-Select Designation</option>
+            <% for (let designation of designations) { %>
+                <option value="<%=designation  %>"><%=designation  %></option>
+            <% } %>
         </select>
         
     <button>Submit</button>
     </form>
     
+    <a href="/employees">Back</a>
 </body>
 </html>
