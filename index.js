@@ -10,7 +10,8 @@ const ejsMate = require('ejs-mate');
 app.engine('ejs', ejsMate);
 
 const usersRouters = require('./server/routes/usersRouters');
-const employeesRouters = require('./server/routes/employeesRouter');
+const employeesRouters = require('./server/routes/employeesRouters');
+const transactionRouters = require('./server/routes/transactionRouters');
 
 app.set('views', path.join(__dirname,'./client/views'));
 app.set('view engine', 'ejs');
@@ -26,6 +27,7 @@ app.use(methodOverride('_method'));
 
 app.use('',usersRouters)
 app.use('',employeesRouters)
+app.use('',transactionRouters)
 
 
 app.use('*',(req,res,next)=>{

@@ -3,7 +3,7 @@ const offices = require('../../seeds/offices');
 const positions = require('../../seeds/position');
 const designations = require('../../seeds/designation');
 const Employee = require('../../models/employee');
-
+const Transaction = require('../../models/transaction')
 
 
 
@@ -32,6 +32,13 @@ exports.addEmployee = async (req,res)=>{
     const employee = req.body.employee;
     const newEmployee = new Employee(employee);
     await newEmployee.save();
+     const addTransaction = {
+         transaction: `${newEmployee.firstName} is added to the database`
+     }
+
+    const transaction =  new Transaction(addTransaction);
+    await transaction.save();
+    
     res.redirect('/employees');
 }
 
@@ -52,11 +59,19 @@ exports.updateEmployeeForm = async (req,res)=>{
 exports.updateEmployee = async(req,res) => {
     const id = req.params.id;
     const employee = await Employee.findByIdAndUpdate(id,{...req.body.employee});
+    
     res.redirect('/employees')
 }
 
 exports.deleteEmployee = async (req,res) => {
     const id = req.params.id;
+    const employee = await Employee.findById(id);
     await Employee.findByIdAndDelete(id);
+    const addTransaction = {
+        transaction: `${employee.firstName} has been deleted`
+    }
+
+   const transaction =  new Transaction(addTransaction);
+   await transaction.save();
      res.redirect('/employees')
 }

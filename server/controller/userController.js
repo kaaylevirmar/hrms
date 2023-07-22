@@ -24,6 +24,7 @@ exports.userForm = async (req,res)=>{
 exports.addUser = async (req,res)=>{
     const newUser = new User(req.body.user)
     await newUser.save()
+  
     res.redirect('/users');
  
 }
